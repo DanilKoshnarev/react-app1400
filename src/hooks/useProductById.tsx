@@ -16,7 +16,15 @@ export function useProductById(id: number) {
                 setProduct(product)
             }
             catch (error) {
-                // instanceof
+                if (error instanceof SyntaxError) {
+                    setError("Failed to parse server response.");
+                } else if (error instanceof Error) {
+                
+                    setError(error.message);
+                } else {
+                    const err = error as string
+                    setError(`${err}`)
+                }
                 const err = error as string
                 setError(`${err}`)
             }

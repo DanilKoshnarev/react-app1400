@@ -51,4 +51,9 @@
     background-color: #FFFFFF;
     border: 2px solid #FFBF80;
 }
-
+.spiner{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 1320px;
+}
